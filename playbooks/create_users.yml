@@ -1,0 +1,36 @@
+---
+- name: Create users and generate SSH configuration via templates
+  hosts: all
+  become: yes
+  vars_files:
+    - ../vars/users.yml
+ 
+  tasks:
+    - name: Create each user
+      user:
+        name: "{{ item.name }}"
+        uid: "{{ item.uid }}"
+        shell: /bin/bash
+        state: present
+        create_home: yes
+      loop: "{{ users }}"
+ 
+    - name: Create .ssh directory
+      file:
+        path: "/home/{{ item.name }}/.ssh"
+        state: directory
+        owner: "{{ item.name }}"
+        group: "{{ item.name }}"
+        mode: '0700'
+      loop: "{{ users }}"
+ 
+    - name: Deploy authorized keys using Jinja2 template
+      template:
+        src: ../templates/authorized_keys.j2
+        dest: "/home/{{ user.name }}/.ssh/authorized_keys"
+        owner: "{{ user.name }}"
+        group: "{{ user.name }}"
+        mode: '0600'
+      loop: "{{ users }}"
+      loop_control:
+        loop_var: user
