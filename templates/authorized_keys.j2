@@ -1,0 +1,8 @@
+# Authorized keys for user: {{ user.name }}
+# Managed by Ansible - DO NOT EDIT MANUALLY
+ 
+{% if user.pubkey %}
+{{ user.pubkey }}
+{% else %}
+# No key provided for {{ user.name }}
+{% endif %}

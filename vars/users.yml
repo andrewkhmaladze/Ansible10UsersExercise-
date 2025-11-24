@@ -1,0 +1,31 @@
+users:
+  - name: thiago
+    uid: 1201
+    pubkey: "ssh-rsa AAAAB3Nza thiago-key"
+  - name: andrew
+    uid: 1202
+    pubkey: "ssh-rsa AAAAB3Nza andrew-key"
+  - name: goncalo
+    uid: 1203
+    pubkey: "ssh-rsa AAAAB3Nza goncalo-key"
+  - name: bruno
+    uid: 1204
+    pubkey: "ssh-rsa AAAAB3Nza bruno-key"
+  - name: carla
+    uid: 1205
+    pubkey: "ssh-rsa AAAAB3Nza carla-key"
+  - name: maria
+    uid: 1206
+    pubkey: "ssh-rsa AAAAB3Nza maria-key"
+  - name: paulo
+    uid: 1207
+    pubkey: "ssh-rsa AAAAB3Nza paulo-key"
+  - name: sofia
+    uid: 1208
+    pubkey: "ssh-rsa AAAAB3Nza sofia-key"
+  - name: marco
+    uid: 1209
+    pubkey: "ssh-rsa AAAAB3Nza marco-key"
+  - name: helena
+    uid: 1210
+    pubkey: "ssh-rsa AAAAB3Nza helena-key"
